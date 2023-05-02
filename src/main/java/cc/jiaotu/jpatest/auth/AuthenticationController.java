@@ -1,5 +1,7 @@
 package cc.jiaotu.jpatest.auth;
 
+import jakarta.annotation.Resource;
+import jakarta.annotation.Resources;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 public class AuthenticationController {
-
+    @Resource
     private final AuthenticationService service;
 
     @PostMapping("/register")

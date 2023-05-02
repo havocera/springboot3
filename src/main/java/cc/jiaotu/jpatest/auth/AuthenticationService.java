@@ -4,19 +4,10 @@ package cc.jiaotu.jpatest.auth;
 import cc.jiaotu.jpatest.config.JwtService;
 import cc.jiaotu.jpatest.entity.UserEntity;
 import cc.jiaotu.jpatest.repositories.UserRepository;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
+import jakarta.annotation.Resource;
 import lombok.RequiredArgsConstructor;
-
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -24,16 +15,19 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 /**
- * @author cj
- * @since 2023-01-23
+ * @author ihavoc
+ * @since 2023-05-2
  */
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
-
+    @Resource
     private final UserRepository repository;
+    @Resource
     private final PasswordEncoder passwordEncoder;
+    @Resource
     private final JwtService jwtService;
+    @Resource
     private final AuthenticationManager authenticationManager;
 
 

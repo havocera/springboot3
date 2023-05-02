@@ -13,7 +13,7 @@
     <version>1.0</version>
     <name>jpa-test</name>
     <description>jpa-test</description>
-    <packaging>jar</packaging>
+
 
     <properties>
         <java.version>17</java.version>
@@ -95,13 +95,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <!--选择启动类-->
-                    <mainClass>cc.jiaotu.jpatest.JpaTestApplication</mainClass>
-                    <!--允许添加本地jar包-->
-                    <includeSystemScope>true</includeSystemScope>
-                    <skip>true</skip>
-                </configuration>
             </plugin>
         </plugins>
     </build>
